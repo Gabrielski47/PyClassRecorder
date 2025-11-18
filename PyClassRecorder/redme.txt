@@ -7,7 +7,7 @@ O PyClassRecorder é um script em Python que automatiza a gravação de aulas do
 
 Funcionalidades Principais
 
-- Login automático no site padrepauloricardo.org
+- Login automático no site padrepauloricardo.org (A senha do codigo esta generica pra evitar acesso a minha conta)
 - Extração de links e duração de aulas de um curso
 - Rolagem automática da página com base no banner fixo (`.black-section`)
 - Detecção e fechamento de janela de avaliação, se presente
@@ -66,4 +66,5 @@ Observações
 
 - OBS Studio deve estar instalado e configurado para iniciar/parar gravação com `F9` e `F10`. E a pasta onde ficaram as gravações deve ser configurado manualmente antes de rodar o script.
 - Certifique-se de manter o navegador e a janela do OBS acessíveis.
+
 - O script foi desenhado para uso no Windows com suporte ao OBS.
