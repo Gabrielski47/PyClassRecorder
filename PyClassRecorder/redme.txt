@@ -1,0 +1,69 @@
+README - PyClassRecorder
+PyClassRecorder
+
+O PyClassRecorder é um script em Python que automatiza a gravação de aulas do site padrepauloricardo.org, utilizando Selenium para navegação e controle do navegador, PyAutoGUI para simulação de cliques, OBS Studio para gravação de tela e interfaces gráficas com Tkinter para interação com o usuário.
+
+* * *
+
+Funcionalidades Principais
+
+- Login automático no site padrepauloricardo.org
+- Extração de links e duração de aulas de um curso
+- Rolagem automática da página com base no banner fixo (`.black-section`)
+- Detecção e fechamento de janela de avaliação, se presente
+- Extração e salvamento do conteúdo textual de cada aula (incluindo referências)
+- Controle automático do OBS Studio para gravação da aula
+- Interface gráfica para iniciar e continuar gravações
+- Controle por tecla para interromper a gravação a qualquer momento (`tecla B`)
+- Modo Teste para simulação rápida
+- Seleção de intervalo de aulas e da pasta para salvar os textos
+
+* * *
+
+Explicação dos Componentes
+
+1. Login Automático
+Utiliza `Selenium` para acessar a página de login, preencher email e senha, e prosseguir automaticamente.
+
+2. Extração de Aulas e Durações
+A função `extrair_aulas_e_duracoes` coleta todos os links de aulas e suas durações (em segundos).
+
+3. Scroll com Base no Anúncio
+Detecta a altura do banner fixo com a classe `.black-section` e aplica `window.scrollBy()` para posicionar o player corretamente.
+
+4. Extração do Conteúdo das Aulas
+A função `salvar_texto_aula` extrai o título, conteúdo principal, e referências bibliográficas da aula, salvando como arquivo `.txt`.
+
+5. Gravação com OBS
+Usa `pyautogui` para ativar o OBS Studio e iniciar/pausar gravações com teclas `F9` e `F10`. Clica automaticamente para colocar o vídeo em tela cheia e iniciar a reprodução.
+
+6. Interfaces Gráficas (Tkinter)
+- Inicial: permite definir URL do curso, intervalo de aulas, ativar modo teste e escolher pasta dos textos.
+- Final: aparece após gravação de todas as aulas, oferecendo opções para novo curso, mudar pasta ou encerrar.
+
+7. Controle de Interrupção
+A tecla `B` pode ser pressionada a qualquer momento para parar a gravação antes de terminar o curso.
+
+* * *
+
+Como Usar
+
+1. Instale as dependências necessárias:
+
+Comandos para terminal:
+pip install selenium bs4 requests pygetwindow pyautogui keyboard
+
+2. Execute `main.py`
+
+Comandos para interface:
+
+3. Na interface que aparecer, insira o link do curso e ajuste o intervalo de aulas se necessário.
+4. O sistema automatizará login, navegação, gravação, extração de texto e salvará os vídeos e arquivos `.txt`.
+
+* * *
+
+Observações
+
+- OBS Studio deve estar instalado e configurado para iniciar/parar gravação com `F9` e `F10`. E a pasta onde ficaram as gravações deve ser configurado manualmente antes de rodar o script.
+- Certifique-se de manter o navegador e a janela do OBS acessíveis.
+- O script foi desenhado para uso no Windows com suporte ao OBS.
