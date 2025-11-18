@@ -17,8 +17,8 @@ import pygetwindow as gw
 
 # === CONFIGS ===
 
-email = "gabrielcwb2002@gmail.com"
-senha = "12345"
+email = "gabriel@gmail.com" #(O email de acesso esta generica pra evitar acesso a minha conta)
+senha = "1234" #(A senha de acesso esta generica pra evitar acesso a minha conta)
 fullscreen_coords = (1127, 663)
 fechar_aba_coords = (1338, 116)
 inicio_video_coords = (22, 705)
@@ -380,4 +380,5 @@ def interface_inicial():
 
 
 interface_inicial()
+
 
